@@ -93,7 +93,7 @@ const SearchBar = () => {
               <div className="flex items-center mt-2">
                 <FaCalendar className="mr-2" />
                 <p className="text-sm">
-                  Admission Dates: {college.admission_dates}
+                  Admission Dates: {college.admissionDates}
                 </p>
               </div>
               <div className="flex items-center mt-2">
