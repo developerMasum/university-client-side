@@ -1,0 +1,40 @@
+
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "testimonial": "Tailwind CSS anteror building user anteror building user anteror building user  is amazing! It makes styling so loremsdadasdaerqerdgwerwerwerwe much easier and faster.",
+      "avatar": "https://i.ibb.co/bgKst37/download.jpg",
+      "rating:":4.5
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "testimonial": "React is a fanteror building user interfaces. Combined with Tailwind CSS, it's a dream team!",
+      "avatar": "https://i.ibb.co/6sKd19G/images.jpg",
+      "rating:":4
+    },
+    {
+        "id": 1,
+        "name": "John Doe",
+        "testimonial": "Tailwind CSS is amazing! It makes styling so much easier and faster.",
+        "avatar": "https://i.ibb.co/bgKst37/download.jpg",
+        "rating:":3
+      },
+    {
+        "id": 1,
+        "name": "John Doe",
+        "testimonial": "Tailwind CSS is amazing! It makes styling so much easier and faster.",
+        "avatar": "https://i.ibb.co/bgKst37/download.jpg",
+        "rating:":3
+      }
+      ,
+    {
+        "id": 1,
+        "name": "John Doe",
+        "testimonial": "Tailwind CSS is amazing! It makes styling so much easier and faster.",
+        "avatar": "https://i.ibb.co/bgKst37/download.jpg",
+        "rating:":3
+      }
+  ]
+  
