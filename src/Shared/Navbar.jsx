@@ -173,7 +173,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <li className="btn btn-warning">
+              <li className="btno rounded-md">
                 <Link to="/login" onClick={toggleMenu}>
                   Login
                 </Link>

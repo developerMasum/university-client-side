@@ -15,7 +15,8 @@ const ReviewForm = () => {
     console.log(data);
     const newItem = {
       avatar: user?.photoURL,
-      name: data.review,
+      testimonial: data.review,
+      name:user?.displayName,
       rating: data.rating,
     };
     console.log("new", newItem);

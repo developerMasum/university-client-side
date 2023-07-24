@@ -10,6 +10,7 @@ import MyCollege from "../Pages/MyCollege/MyCollege";
 import Colleges from "../Pages/AllColleges/Colleges";
 import User from "../Pages/User/User";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <CollegeDetails />,
+        element: <PrivateRoute><CollegeDetails /></PrivateRoute>,
         loader: ({ params }) =>
           fetch(
             `https://university-server-side.vercel.app/admission/${params.id}`
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-college",
-        element: <MyCollege />,
+        element: <PrivateRoute><MyCollege /></PrivateRoute>,
       },
       {
         path: "/admission-form/:id",
