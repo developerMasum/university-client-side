@@ -1,56 +1,49 @@
-import axios from 'axios';
-import React, { useContext } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import React, { useContext } from "react";
+import { useForm, Controller } from "react-hook-form";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const ReviewForm = () => {
-  const navigate = useNavigate()
-  const {user} = useContext(AuthContext)
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const { handleSubmit, control, setValue } = useForm();
 
   const onSubmit = (data) => {
-
     console.log(data);
     const newItem = {
-      avatar:user?.photoURL,
-      name:data.review,
-      rating: data.rating
-      
+      avatar: user?.photoURL,
+      name: data.review,
+      rating: data.rating,
     };
-    console.log('new',newItem);
-
+    console.log("new", newItem);
 
     axios
-    .post('http://localhost:5000/feedback', newItem)
-    .then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        // Reset the form (if needed)
-        // reset();
+      .post("https://university-server-side.vercel.app/feedback", newItem)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          // Reset the form (if needed)
+          // reset();
 
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Your Application has been sent successfully',
-          showConfirmButton: false,
-          timer: 1500,
-        });
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Application has been sent successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
 
-        // Navigate to the desired page (e.g., "/my-college")
-        navigate('/')
-      }
-    })
-    .catch((error) => {
-      // Handle error if necessary
-      console.error('Error submitting application:', error);
-    });
-
-
-
-   
+          // Navigate to the desired page (e.g., "/my-college")
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        // Handle error if necessary
+        console.error("Error submitting application:", error);
+      });
   };
 
   return (
@@ -103,7 +96,7 @@ const ReviewForm = () => {
                 step="1"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your rating (1-5)"
-                onChange={(e) => setValue('rating', parseInt(e.target.value))}
+                onChange={(e) => setValue("rating", parseInt(e.target.value))}
               />
             )}
           />
@@ -122,7 +115,5 @@ const ReviewForm = () => {
 };
 
 export default ReviewForm;
-
-
 
 // make a ReviewForm using react hook form Review input and rating input , make it by tailwindcss and jsx.  style it beautiful and responsive

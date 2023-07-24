@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -19,11 +18,12 @@ const Testimonial = () => {
 
   useEffect(() => {
     // Fetch testimonial data from a JSON file (replace with your API endpoint)
-    fetch("http://localhost:5000/feedback")
+    fetch("https://university-server-side.vercel.app/feedback")
       .then((response) => response.json())
-      .then((data) =>{
-        console.log('testi',data);
-        setTestimonials(data)})
+      .then((data) => {
+        console.log("testi", data);
+        setTestimonials(data);
+      })
       .catch((error) =>
         console.error("Error fetching testimonial data:", error)
       );
@@ -42,15 +42,12 @@ const Testimonial = () => {
 
   return (
     <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-  
       {testimonialChunks.map((chunk, index) => (
         <SwiperSlide key={index}>
           <div className="py-10 px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {chunk.map((data) => (
-              <TestimonialCaro key={data.id}
-              data={data}
-              />
+                <TestimonialCaro key={data.id} data={data} />
               ))}
             </div>
           </div>

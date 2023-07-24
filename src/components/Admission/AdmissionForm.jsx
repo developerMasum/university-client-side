@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import axios from "axios";
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,9 +10,19 @@ const AdmissionForm = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const data = useLoaderData();
- console.log(data);
- const {collegeName,admissionWebsite,featuredImage,details,location, sports, researchHistory, events, admissionDates,collegeImage} = data;
- 
+  console.log(data);
+  const {
+    collegeName,
+    admissionWebsite,
+    featuredImage,
+    details,
+    location,
+    sports,
+    researchHistory,
+    events,
+    admissionDates,
+    collegeImage,
+  } = data;
 
   const { register, handleSubmit, reset } = useForm();
   const ImgHostingURL = `https://api.imgbb.com/1/upload?key=${ImgKey}`;
@@ -34,18 +44,29 @@ const AdmissionForm = () => {
 
           const newItem = {
             candidateName: name,
-            user:user?.email,
+            user: user?.email,
             number: number,
             address: address,
             subject: subject,
             email: email,
             image: imageURL,
-            collegeName:collegeName,
-            admissionWebsite,featuredImage,details,location, sports, researchHistory, events, admissionDates,collegeImage
+            collegeName: collegeName,
+            admissionWebsite,
+            featuredImage,
+            details,
+            location,
+            sports,
+            researchHistory,
+            events,
+            admissionDates,
+            collegeImage,
           };
           console.log(newItem);
           axios
-            .post("http://localhost:5000/candidate", newItem)
+            .post(
+              "https://university-server-side.vercel.app/candidate",
+              newItem
+            )
             .then((data) => {
               if (data.data.insertedId) {
                 reset();
@@ -61,15 +82,13 @@ const AdmissionForm = () => {
             });
         }
       });
-    };
-    
-    const passPara = ()=>{
-      const para = params.id;
-      console.log(para);
-      localStorage.setItem('data',para)
+  };
 
-
-    }
+  const passPara = () => {
+    const para = params.id;
+    console.log(para);
+    localStorage.setItem("data", para);
+  };
 
   return (
     <div className="w-1/2 px-10 pt-28 mx-auto ">
@@ -151,7 +170,10 @@ const AdmissionForm = () => {
         <input className="btn btn-warning btn-sm mt-4 mb-5 " type="submit" value="Add Item" /> */}
 
         <div className="flex justify-center">
-          <button onClick={passPara} className="btn btn-warning w-1/2"> Submit Application</button>
+          <button onClick={passPara} className="btn btn-warning w-1/2">
+            {" "}
+            Submit Application
+          </button>
         </div>
       </form>
     </div>
