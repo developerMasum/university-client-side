@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar fixed z-10 bg-gray-200 bg-opacity-20 text-white max-w-screen-xl mx-auto">
+      <div className="navbar fixed z-10 bg-gray-200 bg-opacity-20 text-white  ">
         <div className="navbar-start">
           <div className="dropdown">
             <label

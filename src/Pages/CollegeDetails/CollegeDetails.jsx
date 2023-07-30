@@ -49,9 +49,9 @@ const CollegeDetails = () => {
       </div>
 
 {/* location and admission details  */}
-<div className='mt-3 flex items-center justify-center'>
+<div className='mt-3 flex items-center justify-around gap-5'>
     <div className='mt-3'>
-        <img src={featuredImage} className='w-3/5 rounded-md' alt="" />
+        <img src={featuredImage} className=' rounded-md' alt="" />
     </div>
     <div>
         <p className='flex items-center gap-1 font-bold'> <BiCurrentLocation className='w-6 h-6' /> Address:</p>
